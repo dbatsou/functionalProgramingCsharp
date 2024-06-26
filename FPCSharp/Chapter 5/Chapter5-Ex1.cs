@@ -8,6 +8,7 @@ namespace FPCSharp.Chapter_5;
 
 public static class Enum<T>
 {
+    // (K) -> Option<DayOfWeek>
     public static Option<DayOfWeek> Parse(string day)
         => System.Enum.TryParse(day, out DayOfWeek result)
             ? Some(result)
