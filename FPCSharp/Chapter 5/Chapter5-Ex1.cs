@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace FPCSharp.Chapter_5;
 
-public static class Enum
+public static class Enum<T>
 {
     public static Option<DayOfWeek> Parse(string day)
         => System.Enum.TryParse(day, out DayOfWeek result)
@@ -19,7 +19,7 @@ public static class Enum
         Write("Tell me day: ");
         var day = Console.ReadLine();
 
-        var result = Parse(day);
+        var result = Enum<DayOfWeek>.Parse(day);
         WriteLine(result);
     }
 }
